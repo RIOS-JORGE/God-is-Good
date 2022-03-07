@@ -1,0 +1,397 @@
+/* GENERAL */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  background-image: url(../img/herramientas.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* GRID */
+
+
+.contenedor{
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(9, auto);
+
+
+  grid-template-areas:
+  "header header header"
+  "galeria-cortes galeria-cortes sidebar"
+  "widget-1 widget-1 sidebar"
+  "sidebar-2 galeria-barbas galeria-barbas"
+  "sidebar-2 widget-2 widget-2"
+  "galeria-niños galeria-niños sidebar-3"
+  "widget-3 widget-3 sidebar-3"
+  "footer footer footer";
+
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .sidebar,
+.contenedor .contenido{
+    border-radius: 4px;
+}
+
+
+.contenedor .header{
+    grid-area: header;
+    display: flexbox;
+}
+
+.navbar{
+  background: url(../img/@eze.estilo.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.navbar #boton{
+  display: none;
+}
+
+.navbar .fa-bars, .navbar .fa-times{
+  font-size: 40px;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transition: 1s;
+}
+
+.cont h1{
+  text-align: center;
+  color: #fff;
+  padding-top: 10px;
+}
+
+
+.navbar .cont{
+  background: #0009;
+  border-bottom: solid 1px #fff;
+  width: 100%;
+  height: 50px;
+}
+
+.menu{
+  background: #0009;
+  width: 150px;
+  visibility: hidden;
+  opacity:0;
+  border-radius: 0 20px 20px 0;
+  transition: 1s;
+  transform: translateX(-100px)
+}
+.menu ul{
+  margin: 5px;
+  padding: 5px;
+  text-align: center;
+}
+.menu ul li{
+  margin: 20px;
+}
+.menu ul li  a{
+  font-size: 20px;
+  color: #fff;
+}
+
+
+.navbar .fa-times{
+  opacity: 0;
+}
+
+.navbar #boton:checked ~ .menu{
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0)
+}
+
+.navbar #boton:checked ~ .fa-bars{
+  opacity: 0;
+}
+
+.navbar #boton:checked ~ .fa-times{
+  opacity: 1;
+}
+
+
+.contenedor .contenido{
+    grid-area: galeria-cortes;
+    background: url(../img/herramientas.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-position: center;
+    color: #fff;
+    min-height: 600px;
+}
+
+.contenedor .sidebar{
+    grid-area: sidebar;
+    color: #fff;
+    background-image: url(../img/ese.jpg);
+    background-position: center;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100px;
+}
+
+.contenedor .widget-1,
+.contenedor .widget-2,
+.contenedor .widget-3{
+    background: cornflowerblue;
+    color: cornsilk;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.contenedor .widget-1{
+    grid-area: widget-1;
+    background-image: url(../img/wall-barber.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contenedor .contenido-2{
+  grid-area: galeria-barbas;
+  background: url(../img/herramientas.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: center;
+  color: #fff;
+  min-height: 600px;
+}
+
+.contenedor .widget-2{
+    grid-area: widget-2;
+    background-image: url(../img/kevin.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.contenedor .sidebar-2{
+  grid-area: sidebar-2;
+  color: #fff;
+  background-image: url(../img/ese2.jpg);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  border-radius: 4px;
+}
+
+
+.contenedor .contenido-3{
+  grid-area: galeria-niños;
+  background: url(../img/herramientas.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-position: center;
+  color: #fff;
+  min-height: 600px;
+}
+
+.contenedor .widget-3{
+    grid-area: widget-3;
+    background-image: url(../img/wall-godisgood.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.contenedor .sidebar-3{
+  grid-area: sidebar-3;
+  color: #fff;
+  background-image: url(../img/eze.jpg);
+  background-position: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  border-radius: 4px;
+}
+
+
+.contenedor .footer{
+    grid-area: footer;
+}
+
+
+
+@media screen and (max-width: 768px){
+   .contenedor{
+    grid-template-areas:
+    "header header header"
+    "galeria-cortes galeria-cortes galeria-cortes"
+    "sidebar sidebar sidebar"
+    "widget-1 widget-1 widget-1"
+    "galeria-barbas galeria-barbas galeria-barbas"
+    "sidebar-2 sidebar-2 sidebar-2"
+    "widget-2 widget-2 widget-2"
+    "galeria-niños galeria-niños galeria-niños"
+    "sidebar-3 sidebar-3 sidebar-3"
+    "widget-3 widget-3 widget-3"
+    "footer footer footer"; 
+   }
+
+   .contenedor .sidebar{
+    background-image: url(../img/wall-godisgood.png);
+  }
+
+  .contenedor .sidebar-2{
+    background-image: url(../img/maquinas-1.jpg);
+  }
+
+   .contenedor .sidebar-3{
+     background-image: url(../img/maquinas-2.jpg);
+   }
+
+}
+
+
+/* galeria cortes */
+
+.galeria-cortes{
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+}
+
+#cortes h3{
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+#cortes p{
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+/* galeria barbas */
+#barbas h3{
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+#barbas p{
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.galeria-barbas{
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+}
+
+/* galeria niños */
+
+#niños h3{
+  text-align: center;
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+}
+
+#niños p{
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+}
+
+.galeria-niños{
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 1);
+}
+
+/* footer */
+
+.contenedor footer{
+  border-radius: 4px;
+  text-align: center;
+  background: #0005;
+}
+
+.contenedor footer h3{
+  color: #fff;
+  padding: 10px;
+  width: 100%;
+}
+
+footer .fa-instagram-square,
+footer .fa-whatsapp-square{
+  margin: 5px;
+  font-size: 60px;
+  color: #fff;
+
+}
+
+footer h4{
+  color: #fff;
+}
+
+/* INICIO */
+
+.inicio a{
+  color: #fff;
+  font-size: 2rem;
+  text-decoration: none;
+  position: fixed;
+  z-index: 10;
+  right: 2rem;
+  bottom: 20px;
+}
+
+.inicio a:hover{
+  color: #0005;
+}
+
+
+
+
+ 
+
+
+
